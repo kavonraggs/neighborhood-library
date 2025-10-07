@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class LibraryApp {
@@ -77,15 +76,17 @@ public class LibraryApp {
                             System.out.println(book);
                         }
                     }
-                    System.out.print("Press 'C' to check in book \n Press any other character to return to menu: ");
+                    System.out.print("Press 'C' to check in book \n Press any other character to return to menu. ");
                     String input = scanner.nextLine();
 
                     if(input.equalsIgnoreCase("C")){
 
-                        System.out.print("What is the ID of the book you are checking in?");
+                        System.out.print("What is the ID of the book you are checking in? ");
                         int checkInId = scanner.nextInt();
                         scanner.nextLine();
                         inventory[checkInId - 1].checkIn();
+                        System.out.println("Book checked in! Press any key to return to menu.");
+                        scanner.nextLine();
 
                     }
                     break;
