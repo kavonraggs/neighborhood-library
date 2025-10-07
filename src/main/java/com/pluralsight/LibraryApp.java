@@ -30,9 +30,12 @@ public class LibraryApp {
          return books;
      }
 
-     public void menuOptions(){
+     public void menuOptions(Book[] inventory){
+        boolean isRunning = true;
         Scanner scanner = new Scanner(System.in);
-        String menu = """
+
+        while(true){
+            String menu = """
                 Welcome to your Neighborhood Library Book Manager!
                 Please choose a menu option:
                 1. List all books
@@ -40,9 +43,31 @@ public class LibraryApp {
                 3. Check in a book
                 4. Exit
                 """;
-        System.out.println(menu);
-        int command = scanner.nextInt();
-        scanner.nextLine();
+            System.out.println(menu);
+
+            int command = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (command){
+                case 1:
+                    System.out.println(inventory);
+                    break;
+                case 2:
+                    //checkout book
+                    break;
+                case 3:
+                    //checkIn Book
+                case 4:
+                    isRunning = false;
+                    System.out.println("Thank you for visiting!");
+                    break;
+                default:
+                    System.out.println("Invalid. Try again.");
+                    break;
+            }
+
+
+        }
 
      }
 
