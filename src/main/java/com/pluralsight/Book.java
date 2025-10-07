@@ -58,6 +58,11 @@ public class Book {
         this.id = id;
     }
 
+    @Override
+    public String toString(){
+        return id + ": " + title + "(" + isbn + ") - " + (isCheckedOut ? "Checked out to " + checkedOutTo: "Available");
+    }
+
 }
 
 
